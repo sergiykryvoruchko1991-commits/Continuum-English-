@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "releaseNotes": [
+    "First release of CONTINUUM English",
+    "Update channels: general and personal"
+  ],
+  "touchesUserData": false,
+  "requiresSupabaseMigration": false,
+  "files": [
+    {
+      "path": "main.js",
+      "url": "https://raw.githubusercontent.com/sergiykryvoruchko1991-commits/Continuum-English-/main/main.js",
+      "sha256": "ad69858823a29844c4663fb2eebce0759862a777acdb1a9f2b17cb9c562a9894"
+    },
+    {
+      "path": "manifest.json",
+      "url": "https://raw.githubusercontent.com/sergiykryvoruchko1991-commits/Continuum-English-/main/manifest.json",
+      "sha256": "12d8288ea7d523c0bcb61072d9d5348c4d7a955d488c5328ce8c9e88f6bd6dd5"
+    },
+    {
+      "path": "styles.css",
+      "url": "https://raw.githubusercontent.com/sergiykryvoruchko1991-commits/Continuum-English-/main/styles.css",
+      "sha256": "6ae8eaa8aed1068e20c0759fbd0c5dccf3e56e4e5cac1adf5da9faaac9abe8e2"
+    }
+  ]
+}

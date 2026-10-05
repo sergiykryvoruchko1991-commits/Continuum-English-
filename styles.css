@@ -1,0 +1,1673 @@
+.continuum-sidebar {
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.continuum-sidebar-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.continuum-logo {
+  margin-top: 1px;
+}
+
+.continuum-logo svg {
+  width: 22px;
+  height: 22px;
+}
+
+.continuum-brand-lockup {
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  max-width: calc(100% - 30px);
+  padding-bottom: 0.72rem;
+}
+
+.continuum-brand-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.05;
+  white-space: nowrap;
+  letter-spacing: 0.015em;
+}
+
+.continuum-brand-tagline {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 2px;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 0.38rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+
+.continuum-today-button,
+.continuum-sidebar-add,
+.continuum-add-button {
+  width: 100%;
+  margin: 6px 0 12px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.continuum-calendar {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  padding: 8px;
+  background: var(--background-secondary);
+}
+
+.continuum-calendar-header {
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.continuum-calendar-nav {
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.continuum-weekdays,
+.continuum-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.continuum-weekdays span {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  padding: 4px 0;
+}
+
+.continuum-day-button {
+  position: relative;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  font-size: 0.8rem;
+}
+
+.continuum-day-button:hover {
+  background: var(--background-modifier-hover);
+}
+
+.continuum-day-button.is-outside-month {
+  color: var(--text-faint);
+}
+
+.continuum-day-button.is-today {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 700;
+}
+
+.continuum-day-button.has-note::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-green);
+  left: calc(50% - 2px);
+  bottom: 1px;
+}
+
+.continuum-day-button.is-today.has-note::after {
+  background: var(--text-on-accent);
+}
+
+.continuum-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 6px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.continuum-divider::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: var(--background-modifier-border);
+}
+
+.continuum-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.continuum-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  text-align: left;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.continuum-nav-button:hover {
+  background: var(--background-modifier-hover);
+}
+
+.continuum-nav-button.is-disabled,
+.continuum-nav-button.is-disabled:hover {
+  opacity: 0.48;
+  cursor: not-allowed;
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.continuum-nav-button.is-disabled::after {
+  content: "🔒";
+  margin-left: auto;
+  font-size: 0.72em;
+  filter: grayscale(1);
+  opacity: 0.8;
+}
+
+.continuum-nav-emoji {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 22px;
+  max-width: 56px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.continuum-nav-button > span:not(.continuum-nav-emoji) {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.continuum-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.continuum-choice {
+  min-height: 44px;
+  white-space: normal;
+}
+
+.continuum-add-wrap {
+  margin-top: 18px;
+}
+
+@media (max-width: 500px) {
+  .continuum-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.continuum-section-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.continuum-library-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.continuum-library-header h2 {
+  margin: 0;
+}
+
+.continuum-library-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.continuum-library-file {
+  width: 100%;
+  text-align: left;
+  padding: 9px 11px;
+  border-radius: 7px;
+}
+
+.continuum-sidebar-hint {
+  margin: -5px 4px 12px;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.continuum-section-actions-modal .continuum-danger-action,
+.continuum-secondary-action {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.continuum-danger-action {
+  border-color: var(--color-red);
+}
+
+.continuum-archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.continuum-archive-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  align-items: center;
+  text-align: left;
+  padding: 9px 11px;
+  border-radius: 8px;
+}
+
+.continuum-archive-row span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.continuum-archive-row small {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.continuum-archive-item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+/* Rotating motivation above the calendar */
+.continuum-motivation-card {
+  margin: 8px 8px 12px;
+  padding: 12px 13px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  background: var(--background-secondary);
+  cursor: pointer;
+}
+
+.continuum-motivation-card.is-empty {
+  display: none;
+}
+
+.continuum-motivation-card:active {
+  transform: scale(0.99);
+}
+
+.continuum-motivation-label {
+  font-size: 0.78em;
+  font-weight: 700;
+  opacity: 0.72;
+  margin-bottom: 6px;
+}
+
+.continuum-motivation-text {
+  font-size: 0.92em;
+  line-height: 1.42;
+  transition: opacity 180ms ease;
+}
+
+.continuum-motivation-text.is-changing {
+  opacity: 0;
+}
+
+.continuum-shared-hint {
+  padding: 3px 10px 7px 41px;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+/* Relationships shared space */
+.continuum-relationships-modal,
+.continuum-relationship-situation,
+.continuum-situation-editor,
+.continuum-relationship-login {
+  max-width: 760px;
+}
+
+.continuum-situation-editor-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.continuum-situation-editor-header h2 {
+  margin: 0;
+}
+
+.continuum-situation-editor-header small {
+  color: var(--text-muted);
+}
+
+.continuum-situation-textarea {
+  width: 100%;
+  min-height: 45vh;
+  resize: vertical;
+  padding: 14px;
+  border-radius: 12px;
+  line-height: 1.55;
+  font: inherit;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.continuum-situation-hint {
+  margin-top: 10px;
+  color: var(--text-muted);
+}
+
+.continuum-situation-hint summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.continuum-situations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.continuum-situation-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  text-align: left;
+  padding: 11px 12px;
+  border-radius: 10px;
+}
+
+.continuum-situation-row small {
+  color: var(--text-muted);
+}
+
+.continuum-perspective-card,
+.continuum-waiting-card {
+  padding: 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  margin: 12px 0;
+  background: var(--background-secondary);
+}
+
+.continuum-perspective-card h3 {
+  margin-top: 0;
+}
+
+.continuum-perspective-text {
+  white-space: pre-wrap;
+  line-height: 1.55;
+}
+
+.continuum-waiting-card p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+@media (max-width: 500px) {
+  .continuum-situation-editor-header,
+  .continuum-library-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .continuum-situation-textarea {
+    min-height: 52vh;
+  }
+}
+
+
+.continuum-keyboard-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 6px 0 2px;
+}
+
+.continuum-hide-keyboard {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+
+/* Continuum 2.0 updater */
+.continuum-update-modal .continuum-update-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+.continuum-update-modal ul { padding-left:22px; }
+
+/* Continuum 2.1 relationships */
+.continuum-topic-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.continuum-topic-header h2 { margin: 0 0 4px; }
+.continuum-topic-header small { color: var(--text-muted); }
+.continuum-topic-status {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  margin: 8px 0 14px;
+}
+.continuum-topic-status.status-close_requested { font-weight: 600; }
+.continuum-topic-status.status-closed { opacity: .8; }
+.continuum-discussion-title { margin-top: 20px; }
+.continuum-message-list { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 14px; }
+.continuum-message-card {
+  border: 1px solid var(--background-modifier-border);
+  border-left-width: 4px;
+  border-radius: 12px;
+  padding: 11px 12px;
+  background: var(--background-secondary);
+}
+.continuum-message-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 7px; }
+.continuum-message-head h3 { margin: 0; }
+.continuum-message-head small { color: var(--text-muted); font-size: .78rem; }
+.continuum-author-blue { border-left-color: #4d8df7; }
+.continuum-author-green { border-left-color: #43a66d; }
+.continuum-author-purple { border-left-color: #9a6ce0; }
+.continuum-author-orange { border-left-color: #e38b3a; }
+.continuum-message-card.is-awaiting-response {
+  box-shadow: 0 0 0 2px var(--interactive-accent);
+  background: var(--background-primary-alt);
+}
+.continuum-color-picker { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 8px 0 12px; }
+.continuum-color-dot { width: 28px; height: 28px; min-width: 28px; border-radius: 999px; padding: 0; border: 2px solid transparent; }
+.continuum-color-dot.color-blue { background: #4d8df7; }
+.continuum-color-dot.color-green { background: #43a66d; }
+.continuum-color-dot.color-purple { background: #9a6ce0; }
+.continuum-color-dot.color-orange { background: #e38b3a; }
+.continuum-color-dot.is-active { outline: 2px solid var(--text-normal); outline-offset: 2px; }
+.continuum-inline-action { margin-top: 10px; font-size: .82rem; padding: 5px 9px; }
+.continuum-message-composer textarea { width: 100%; min-height: 120px; resize: vertical; }
+.continuum-close-request-card, .continuum-closed-card {
+  padding: 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  margin-top: 14px;
+  background: var(--background-secondary);
+}
+.continuum-waiting-count { margin: 8px 0 12px; font-weight: 600; }
+.continuum-topic-row-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.continuum-topic-row-top span { color: var(--text-muted); font-size: .8rem; white-space: nowrap; }
+.continuum-situation-row.priority-0 { box-shadow: inset 3px 0 0 var(--interactive-accent); }
+.continuum-situation-row.priority-2 { opacity: .72; }
+@media (max-width: 500px) {
+  .continuum-topic-header, .continuum-message-head, .continuum-topic-row-top { flex-direction: column; align-items: stretch; }
+}
+.continuum-perspective-card.is-awaiting-response,
+.continuum-message-card.is-awaiting-response {
+  box-shadow: 0 0 0 2px var(--interactive-accent);
+  background: var(--background-primary-alt);
+}
+
+/* Continuum 2.1.1: mobile keyboard + dictation */
+.continuum-relationship-situation,
+.continuum-situation-editor,
+.continuum-relationship-login {
+  padding-bottom: calc(18px + var(--continuum-keyboard-offset, 0px));
+  max-height: min(88dvh, calc(100dvh - 24px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding-bottom: calc(120px + var(--continuum-keyboard-offset, 0px));
+}
+
+.continuum-relationship-situation.is-keyboard-open,
+.continuum-situation-editor.is-keyboard-open,
+.continuum-relationship-login.is-keyboard-open {
+  max-height: calc(100dvh - 8px);
+}
+
+.continuum-message-composer,
+.continuum-situation-editor {
+  scroll-margin-bottom: calc(120px + var(--continuum-keyboard-offset, 0px));
+}
+
+.continuum-keyboard-actions {
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.continuum-dictate-button,
+.continuum-email-toggle {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.continuum-dictate-button.is-listening {
+  font-weight: 700;
+  box-shadow: 0 0 0 2px var(--interactive-accent);
+}
+
+.continuum-email-toggle.is-active {
+  box-shadow: inset 0 0 0 2px var(--interactive-accent);
+}
+
+@media (max-width: 500px) {
+  .continuum-relationship-situation,
+  .continuum-situation-editor,
+  .continuum-relationship-login {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100dvh - 4px);
+  }
+
+  .continuum-message-composer textarea,
+  .continuum-situation-textarea {
+    min-height: 34vh;
+    max-height: 52vh;
+  }
+
+  .continuum-message-composer textarea:focus,
+  .continuum-situation-textarea:focus {
+    min-height: 28vh;
+  }
+}
+
+/* Continuum 2.1.2: nested folders in knowledge bases */
+.continuum-library-browser-header {
+  margin-bottom: 6px;
+}
+
+.continuum-library-title-wrap {
+  min-width: 0;
+}
+
+.continuum-library-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 2px 0 12px;
+  color: var(--text-muted);
+}
+
+.continuum-library-crumb {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 3px 5px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.continuum-library-crumb:last-of-type {
+  color: var(--text-normal);
+  font-weight: 600;
+}
+
+.continuum-library-crumb-separator {
+  color: var(--text-faint);
+}
+
+.continuum-library-create-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.continuum-library-create-bar button {
+  flex: 1 1 140px;
+}
+
+.continuum-library-tree-list {
+  gap: 7px;
+}
+
+.continuum-library-entry {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  text-align: left;
+  padding: 10px 11px;
+  border-radius: 9px;
+}
+
+.continuum-library-entry-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.continuum-library-entry-chevron {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+}
+
+.continuum-library-folder {
+  font-weight: 600;
+}
+
+.continuum-library-note {
+  grid-template-columns: 26px minmax(0, 1fr);
+}
+
+.continuum-library-back {
+  white-space: nowrap;
+}
+
+.continuum-library-empty {
+  margin-top: 14px;
+}
+
+@media (max-width: 500px) {
+  .continuum-library-browser-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .continuum-library-create-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Continuum 2.2.0: knowledge-base management */
+.continuum-library-create-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 14px;
+}
+
+.continuum-library-entry,
+.continuum-nav-button {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.continuum-library-target-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 12px;
+}
+
+.continuum-library-target-nav span {
+  font-weight: 600;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.continuum-library-target-choose {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.continuum-library-linked-title {
+  margin: 20px 0 8px;
+}
+
+.continuum-library-linked-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.continuum-library-linked-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 9px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: var(--background-secondary);
+}
+
+.continuum-library-linked-row:not(:has(input)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.continuum-library-linked-row input[type='checkbox'] {
+  margin-top: 8px;
+}
+
+.continuum-library-linked-row.is-checked .continuum-library-linked-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.continuum-library-linked-open {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5px 8px;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 3px;
+}
+
+.continuum-library-linked-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+.continuum-library-linked-open small {
+  grid-column: 1;
+  color: var(--text-muted);
+}
+
+.continuum-library-linked-arrow {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--text-muted);
+}
+
+.continuum-motivation-manager-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.continuum-motivation-manager-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+.continuum-library-item-actions .continuum-secondary-action,
+.continuum-library-item-actions .continuum-danger-action {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.continuum-section-modal,
+.continuum-library-target-modal,
+.continuum-library-item-actions {
+  padding-bottom: calc(18px + var(--continuum-keyboard-offset, 0px));
+  max-height: min(88dvh, calc(100dvh - 24px));
+  overflow-y: auto;
+  scroll-padding-bottom: calc(120px + var(--continuum-keyboard-offset, 0px));
+}
+
+@media (max-width: 500px) {
+  .continuum-library-create-bar > button {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .continuum-motivation-manager-row {
+    grid-template-columns: 1fr;
+  }
+
+  .continuum-section-modal,
+  .continuum-library-target-modal,
+  .continuum-library-item-actions {
+    max-height: calc(100dvh - 4px);
+  }
+}
+
+/* Continuum 2.2.1: stronger iOS keyboard protection */
+.continuum-keyboard-safe-container {
+  overflow: hidden !important;
+  justify-content: flex-start !important;
+}
+
+.continuum-keyboard-safe-modal {
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.continuum-keyboard-safe-modal .modal-content,
+.continuum-keyboard-safe-modal .continuum-section-modal,
+.continuum-keyboard-safe-modal .continuum-relationship-login,
+.continuum-keyboard-safe-modal .continuum-situation-editor,
+.continuum-keyboard-safe-modal .continuum-relationship-situation {
+  max-height: calc(var(--continuum-vv-height, 100dvh) - 28px) !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-padding-top: 24px;
+  scroll-padding-bottom: 120px;
+}
+
+.continuum-keyboard-safe-modal input:focus,
+.continuum-keyboard-safe-modal textarea:focus,
+.continuum-keyboard-safe-modal [contenteditable='true']:focus {
+  scroll-margin-top: 72px;
+  scroll-margin-bottom: 160px;
+}
+
+@media (max-width: 500px) {
+  .continuum-keyboard-safe-modal {
+    width: calc(100vw - 12px) !important;
+    max-width: calc(100vw - 12px) !important;
+  }
+  .continuum-keyboard-safe-modal .modal-content {
+    padding-bottom: 24px !important;
+  }
+}
+
+/* Continuum 2.2.2: linked daily-entry cards grow naturally with their text. */
+.continuum-library-linked-row {
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  align-items: start;
+}
+
+.continuum-library-linked-open {
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+  align-items: start;
+  white-space: normal;
+}
+
+.continuum-library-linked-text {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.45;
+  padding: 1px 0 3px;
+}
+
+.continuum-library-linked-arrow {
+  align-self: start;
+  line-height: 1.45;
+}
+
+@media (max-width: 500px) {
+  .continuum-library-linked-row {
+    padding: 10px 11px;
+  }
+
+  .continuum-library-linked-open {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 1px 0;
+  }
+}
+
+
+/* Continuum 2.2.3: keep the focused form field physically above the iOS keyboard. */
+.continuum-keyboard-safe-modal .continuum-section-modal.is-keyboard-open,
+.continuum-keyboard-safe-modal .continuum-relationship-login.is-keyboard-open,
+.continuum-keyboard-safe-modal .continuum-situation-editor.is-keyboard-open,
+.continuum-keyboard-safe-modal .continuum-relationship-situation.is-keyboard-open {
+  padding-bottom: calc(var(--continuum-keyboard-offset, 0px) + 48px) !important;
+  scroll-padding-bottom: calc(var(--continuum-keyboard-offset, 0px) + 96px) !important;
+}
+@media (max-width: 500px) {
+  .continuum-keyboard-safe-modal input,
+  .continuum-keyboard-safe-modal textarea {
+    scroll-margin-bottom: calc(var(--continuum-keyboard-offset, 0px) + 72px) !important;
+  }
+}
+
+/* Stabilization pass for motivation list and iPhone add-section modal. */
+.continuum-motivation-manager-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 44px !important;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.continuum-motivation-manager-row.is-hidden {
+  opacity: 0.48;
+}
+
+.continuum-motivation-add {
+  width: 100%;
+  margin: 8px 0 12px;
+}
+
+.continuum-motivation-input {
+  width: 100%;
+  min-height: 112px;
+  resize: vertical;
+}
+
+.continuum-motivation-toggle {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.continuum-add-section-modal {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: calc(32px + var(--continuum-keyboard-offset, 0px)) !important;
+  scroll-padding-top: 76px !important;
+  scroll-padding-bottom: calc(140px + var(--continuum-keyboard-offset, 0px)) !important;
+}
+
+.continuum-mobile-modal-close {
+  position: sticky;
+  top: max(8px, env(safe-area-inset-top, 0px));
+  z-index: 30;
+  float: right;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  margin: 0 0 6px 10px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1;
+  touch-action: manipulation;
+}
+
+.continuum-keyboard-safe-modal .continuum-add-section-modal .setting-item {
+  scroll-margin-top: 88px !important;
+  scroll-margin-bottom: calc(var(--continuum-keyboard-offset, 0px) + 120px) !important;
+}
+
+@media (max-width: 500px) {
+  .continuum-motivation-manager-row {
+    grid-template-columns: minmax(0, 1fr) 44px !important;
+  }
+
+  .continuum-keyboard-safe-container {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 10px) !important;
+  }
+
+  .continuum-keyboard-safe-modal {
+    max-height: calc(var(--continuum-vv-height, 100dvh) - env(safe-area-inset-top, 0px) - 12px) !important;
+  }
+
+  .continuum-keyboard-safe-modal .continuum-add-section-modal {
+    max-height: calc(var(--continuum-vv-height, 100dvh) - env(safe-area-inset-top, 0px) - 22px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .continuum-keyboard-safe-modal .continuum-add-section-modal input:focus {
+    scroll-margin-top: 96px !important;
+    scroll-margin-bottom: calc(var(--continuum-keyboard-offset, 0px) + 140px) !important;
+  }
+}
+
+/* Continuum 2.2.5: focused stabilization of the add-section modal on iPhone. */
+/* Use Obsidian's single native close button; make its hit target large and keep it clear of the top system area. */
+.continuum-keyboard-safe-modal .modal-close-button {
+  top: 14px !important;
+  right: 14px !important;
+  width: 48px !important;
+  min-width: 48px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  z-index: 200 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  touch-action: manipulation;
+  pointer-events: auto !important;
+}
+
+/* The previous extra in-content close control is no longer created. Hide any stale copy if Obsidian preserved one during hot reload. */
+.continuum-add-section-modal .continuum-mobile-modal-close {
+  display: none !important;
+}
+
+@media (max-width: 500px) {
+  .continuum-keyboard-safe-modal .continuum-add-section-modal {
+    box-sizing: border-box;
+    padding-top: 18px !important;
+    padding-bottom: calc(90px + var(--continuum-keyboard-offset, 0px)) !important;
+    scroll-padding-top: 76px !important;
+    scroll-padding-bottom: calc(180px + var(--continuum-keyboard-offset, 0px)) !important;
+  }
+
+  .continuum-add-section-modal .continuum-section-name-input {
+    scroll-margin-top: 90px !important;
+    scroll-margin-bottom: calc(190px + var(--continuum-keyboard-offset, 0px)) !important;
+  }
+
+  .continuum-add-section-modal .setting-item:has(.continuum-section-name-input) {
+    scroll-margin-top: 84px !important;
+    scroll-margin-bottom: calc(190px + var(--continuum-keyboard-offset, 0px)) !important;
+  }
+}
+
+/* Continuum 2.2.6: iPhone add-section stabilization.
+   The name field is intentionally first in the form so the keyboard cannot cover it. */
+@media (max-width: 500px) {
+  .continuum-add-section-modal .continuum-section-name-setting {
+    position: relative;
+    z-index: 2;
+    margin-top: 8px;
+    padding-bottom: 10px;
+    background: var(--background-primary);
+  }
+
+  .continuum-add-section-modal .continuum-section-name-setting .setting-item-control {
+    width: 100%;
+  }
+
+  .continuum-add-section-modal .continuum-section-name-setting input {
+    width: 100% !important;
+    min-height: 44px;
+    font-size: 16px !important; /* prevents iOS zoom and keeps caret stable */
+  }
+
+  .continuum-keyboard-safe-modal .continuum-add-section-modal.is-keyboard-open .continuum-section-name-setting {
+    position: sticky;
+    top: 0;
+    background: var(--background-primary);
+    padding-top: 6px;
+  }
+}
+
+
+/* Continuum 2.2.8: compact Relationships cards + clean handover checklist. */
+.continuum-relationships-modal .continuum-situations-list {
+  gap: 10px;
+}
+
+.continuum-relationships-modal .continuum-situation-row {
+  height: auto;
+  min-height: 0;
+  padding: 10px 14px;
+  gap: 4px;
+  border-radius: 14px;
+  line-height: 1.25;
+  overflow: visible;
+}
+
+.continuum-relationships-modal .continuum-topic-row-top {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 10px;
+  align-items: baseline;
+}
+
+.continuum-relationships-modal .continuum-topic-row-top strong {
+  min-width: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.continuum-relationships-modal .continuum-topic-row-top span,
+.continuum-relationships-modal .continuum-situation-row small {
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--text-muted);
+}
+
+.continuum-relationships-modal .continuum-situation-row small {
+  display: block;
+  width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Checklist-style knowledge-base folders: plain list, no cards. */
+.continuum-library-linked-list.is-checklist {
+  gap: 0;
+}
+
+.continuum-library-linked-list.is-checklist .continuum-library-linked-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  padding: 9px 2px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.continuum-library-linked-list.is-checklist .continuum-library-linked-row + .continuum-library-linked-row {
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.continuum-library-linked-list.is-checklist .continuum-library-linked-row input[type='checkbox'] {
+  margin: 3px 0 0;
+}
+
+.continuum-library-linked-list.is-checklist .continuum-library-linked-open {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: start;
+}
+
+.continuum-library-linked-list.is-checklist .continuum-library-linked-text {
+  padding: 0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.continuum-library-linked-list.is-checklist .continuum-library-linked-arrow {
+  align-self: start;
+  padding: 0 2px;
+  line-height: 1.4;
+}
+
+@media (max-width: 500px) {
+  .continuum-relationships-modal .continuum-topic-row-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+  }
+
+  .continuum-relationships-modal .continuum-situation-row {
+    padding: 10px 12px;
+  }
+}
+
+
+/* Continuum 2.2.11: stabilize Relationship composer on iPhone and simplify discussion UI. */
+.continuum-discussion-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 18px 0 8px;
+  min-width: 0;
+}
+
+.continuum-discussion-bar .continuum-discussion-title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.continuum-discussion-bar .continuum-color-picker {
+  margin: 0;
+  gap: 6px;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.continuum-color-picker.is-compact .continuum-color-dot {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  border-width: 1px;
+}
+
+.continuum-color-picker.is-compact .continuum-color-dot.is-active {
+  outline-width: 1px;
+  outline-offset: 2px;
+}
+
+/* Long relationship text should scroll inside the editor instead of disappearing behind iOS keyboard. */
+.continuum-situation-editor .continuum-situation-textarea,
+.continuum-keyboard-safe-modal .continuum-situation-textarea {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.continuum-message-composer textarea {
+  box-sizing: border-box;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* When the iOS keyboard is open, keep the active editor compact and visible. */
+.continuum-situation-editor.is-keyboard-open .continuum-situation-textarea,
+.continuum-keyboard-safe-modal .continuum-situation-editor.is-keyboard-open .continuum-situation-textarea {
+  min-height: 180px !important;
+  height: min(34vh, 260px) !important;
+  max-height: min(34vh, 260px) !important;
+  resize: none !important;
+}
+
+.continuum-relationship-situation.is-keyboard-open .continuum-message-composer,
+.continuum-keyboard-safe-modal .continuum-relationship-situation.is-keyboard-open .continuum-message-composer {
+  position: sticky;
+  bottom: 6px;
+  z-index: 40;
+  padding: 8px 0 4px;
+  background: var(--background-primary);
+}
+
+.continuum-relationship-situation.is-keyboard-open .continuum-message-composer textarea,
+.continuum-keyboard-safe-modal .continuum-relationship-situation.is-keyboard-open .continuum-message-composer textarea {
+  min-height: 150px !important;
+  height: min(30vh, 220px) !important;
+  max-height: min(30vh, 220px) !important;
+  resize: none !important;
+}
+
+@media (max-width: 500px) {
+  .continuum-discussion-bar {
+    gap: 8px;
+  }
+
+  .continuum-discussion-bar .continuum-discussion-title {
+    font-size: .95rem;
+  }
+
+  .continuum-color-picker.is-compact .continuum-color-dot {
+    width: 18px;
+    min-width: 18px;
+    height: 18px;
+    min-height: 18px;
+  }
+
+  .continuum-relationship-situation.is-keyboard-open,
+  .continuum-situation-editor.is-keyboard-open {
+    padding-bottom: 12px !important;
+    scroll-padding-bottom: 24px !important;
+  }
+}
+
+
+/* Continuum 2.2.12
+   iPhone relationship editor mode.
+   Previous attempts tried to scroll the modal above the keyboard. On iOS
+   WebView that is not reliable enough, so while typing we place the active
+   relationship textarea directly inside the visible viewport. */
+@media (max-width: 600px) {
+  .continuum-situation-editor.is-keyboard-open .continuum-relationship-mobile-editor:focus,
+  .continuum-relationship-situation.is-keyboard-open .continuum-relationship-mobile-editor:focus,
+  .continuum-keyboard-safe-modal .continuum-situation-editor.is-keyboard-open .continuum-relationship-mobile-editor:focus,
+  .continuum-keyboard-safe-modal .continuum-relationship-situation.is-keyboard-open .continuum-relationship-mobile-editor:focus {
+    position: fixed !important;
+    z-index: 10020 !important;
+
+    /* visualViewport height is written by attachMobileKeyboardAvoidance().
+       This makes the editor live in the area that remains above the keyboard. */
+    top: calc(env(safe-area-inset-top, 0px) + 58px) !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+
+    height: calc(var(--continuum-vv-height, 420px) - env(safe-area-inset-top, 0px) - 92px) !important;
+    min-height: 170px !important;
+    max-height: calc(var(--continuum-vv-height, 420px) - env(safe-area-inset-top, 0px) - 92px) !important;
+
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 14px !important;
+    resize: none !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+
+    border: 1px solid var(--interactive-accent) !important;
+    border-radius: 12px !important;
+    background: var(--background-primary) !important;
+    color: var(--text-normal) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .28) !important;
+  }
+
+  /* The old sticky composer rules are intentionally neutralized while typing.
+     Only the textarea becomes the editor overlay. */
+  .continuum-relationship-situation.is-keyboard-open .continuum-message-composer,
+  .continuum-keyboard-safe-modal .continuum-relationship-situation.is-keyboard-open .continuum-message-composer {
+    position: static !important;
+    z-index: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  /* Keep the modal itself still while the fixed editor is active. */
+  .continuum-situation-editor.is-keyboard-open,
+  .continuum-relationship-situation.is-keyboard-open {
+    overflow: hidden !important;
+  }
+}
+
+
+/* Continuum 2.2.13
+   iPhone focus-driven relationship editor.
+   Does not depend on keyboard detection or visualViewport. */
+@media (max-width: 600px) {
+  .continuum-relationship-mobile-editor:focus {
+    position: fixed !important;
+    z-index: 10050 !important;
+    top: calc(env(safe-area-inset-top, 0px) + 64px) !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+
+    height: 34vh !important;
+    min-height: 220px !important;
+    max-height: 38vh !important;
+
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 14px !important;
+    resize: none !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+
+    border: 1px solid var(--interactive-accent) !important;
+    border-radius: 12px !important;
+    background: var(--background-primary) !important;
+    color: var(--text-normal) !important;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, .32) !important;
+  }
+
+  .continuum-relationship-mobile-editor:focus::placeholder {
+    color: var(--text-muted);
+  }
+}
+
+
+/* Continuum 2.2.14: separate reply modal, same interaction model as editing */
+.continuum-relationship-reply-modal {
+  max-width: 760px;
+}
+
+.continuum-relationship-reply-modal .continuum-situation-textarea {
+  width: 100%;
+  min-height: 42vh;
+  max-height: 58vh;
+  overflow-y: auto;
+  resize: vertical;
+}
+
+@media (max-width: 600px) {
+  .continuum-relationship-reply-modal {
+    max-height: calc(100dvh - 8px);
+    overflow-y: auto;
+    padding-bottom: calc(18px + var(--continuum-keyboard-offset, 0px));
+  }
+
+  .continuum-relationship-reply-modal .continuum-situation-textarea:focus {
+    position: static !important;
+    z-index: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    height: 38vh !important;
+    min-height: 220px !important;
+    max-height: 46vh !important;
+    box-shadow: none !important;
+  }
+
+  .continuum-discussion-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Continuum 2.3.0: shared space + shared calendar */
+.continuum-shared-nav {
+  margin-bottom: 2px;
+}
+
+.continuum-shared-calendar-modal,
+.continuum-shared-calendar-editor {
+  max-width: 760px;
+}
+
+.continuum-shared-calendar-top,
+.continuum-shared-calendar-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.continuum-shared-calendar-top h2 {
+  margin: 0;
+}
+
+.continuum-shared-calendar-grid-wrap {
+  margin: 14px 0 18px;
+  padding: 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  background: var(--background-secondary);
+}
+
+.continuum-shared-calendar-day.is-selected:not(.is-today) {
+  box-shadow: inset 0 0 0 2px var(--interactive-accent);
+  font-weight: 700;
+}
+
+.continuum-shared-calendar-day.has-shared-items::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--interactive-accent);
+  left: calc(50% - 2.5px);
+  bottom: 2px;
+}
+
+.continuum-shared-calendar-day.is-today.has-shared-items::after {
+  background: var(--text-on-accent);
+}
+
+.continuum-shared-calendar-day-header {
+  margin: 6px 0 10px;
+}
+
+.continuum-shared-calendar-day-header > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-transform: capitalize;
+}
+
+.continuum-shared-calendar-day-header small,
+.continuum-shared-calendar-item-body small,
+.continuum-shared-calendar-editor-date {
+  color: var(--text-muted);
+  font-size: .78rem;
+}
+
+.continuum-shared-calendar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.continuum-shared-calendar-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: start;
+  padding: 9px 2px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.continuum-shared-calendar-item:last-child {
+  border-bottom: 0;
+}
+
+.continuum-shared-calendar-check {
+  width: 32px;
+  min-width: 32px;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 1.15rem;
+}
+
+.continuum-shared-calendar-item-body {
+  min-width: 0;
+}
+
+.continuum-shared-calendar-item-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.42;
+}
+
+.continuum-shared-calendar-item.is-completed .continuum-shared-calendar-item-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.continuum-shared-calendar-item-actions {
+  display: flex;
+  gap: 3px;
+}
+
+.continuum-shared-calendar-item-actions button {
+  min-width: 30px;
+  padding: 4px 7px;
+}
+
+.continuum-shared-calendar-editor-date {
+  margin: -4px 0 10px;
+  text-transform: capitalize;
+}
+
+.continuum-shared-calendar-editor .continuum-situation-textarea {
+  min-height: 32vh;
+  max-height: 52vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 500px) {
+  .continuum-shared-calendar-modal,
+  .continuum-shared-calendar-editor {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .continuum-shared-calendar-day-header {
+    align-items: flex-end;
+  }
+
+  .continuum-shared-calendar-item {
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    gap: 6px;
+  }
+
+  .continuum-shared-calendar-item-actions {
+    flex-direction: column;
+  }
+}
+
+/* Compact, foldable help sections on Home.md. */
+.callout[data-callout="continuum"] {
+  --callout-color: 109, 82, 230;
+  --callout-icon: lucide-continuum;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  background: color-mix(in srgb, rgb(var(--callout-color)) 5%, var(--background-primary));
+  margin: 0.55rem 0;
+}
+
+.callout[data-callout="continuum"] .callout-title {
+  font-weight: 600;
+}
+
+.callout[data-callout="continuum"] .callout-content > :first-child {
+  margin-top: 0.35rem;
+}
+
+.callout[data-callout="continuum"] .callout-content > :last-child {
+  margin-bottom: 0.25rem;
+}
+.continuum-message-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.continuum-message-actions button {
+  min-height: 32px;
+  padding: 4px 10px;
+  font-size: var(--font-ui-smaller);
+}
+
+.continuum-first-run-modal ul {
+  max-height: 42vh;
+  overflow: auto;
+  padding-inline-start: 22px;
+}
