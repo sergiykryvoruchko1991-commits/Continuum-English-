@@ -1,7 +1,7 @@
 const { Plugin, Modal, Notice, ItemView, MarkdownView, moment, setIcon, Setting, PluginSettingTab, requestUrl } = require('obsidian');
 
 const VIEW_TYPE = 'continuum-sidebar-view';
-const CONTINUUM_PLUGIN_VERSION = '1.0.0';
+const CONTINUUM_PLUGIN_VERSION = '1.0.1';
 const CONTINUUM_DATA_SCHEMA_VERSION = 8;
 
 const CONTINUUM_UPDATE_FILE_PREFIX = 'https://raw.githubusercontent.com/sergiykryvoruchko1991-commits/Continuum-English-/';
