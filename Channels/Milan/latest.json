@@ -1,0 +1,25 @@
+{
+  "version": "1.0.1",
+  "releaseNotes": [
+    "Test release for the admin channel"
+  ],
+  "touchesUserData": false,
+  "requiresSupabaseMigration": false,
+  "files": [
+    {
+      "path": "main.js",
+      "url": "https://raw.githubusercontent.com/sergiykryvoruchko1991-commits/Continuum-English-/main/channels/admin/main.js",
+      "sha256": "16995c0fb29c982fac09793bd35616fd03b3957c8c33ad95a723c08bfde49721"
+    },
+    {
+      "path": "manifest.json",
+      "url": "https://raw.githubusercontent.com/sergiykryvoruchko1991-commits/Continuum-English-/main/channels/admin/manifest.json",
+      "sha256": "ea1814f26e3c6d937e41b5251ddb49001ea6799b000d1b64cef84a0901e5405a"
+    },
+    {
+      "path": "styles.css",
+      "url": "https://raw.githubusercontent.com/sergiykryvoruchko1991-commits/Continuum-English-/main/channels/admin/styles.css",
+      "sha256": "6ae8eaa8aed1068e20c0759fbd0c5dccf3e56e4e5cac1adf5da9faaac9abe8e2"
+    }
+  ]
+}
